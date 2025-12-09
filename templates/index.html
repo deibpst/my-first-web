@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>omg</title>
+    <meta charset="UTF-8" />
+    <title>omgg</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 
 <body>
     <h1>Form</h1>
+
+    <form action="/enviar" method="POST">
+        <input type="text" name="nombre" placeholder="Name" required>
+        <textarea wrap="soft" name="mensaje" placeholder="Your message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Sent messages</h2>
+
+    {% for m in mensajes %}
+    <div class="message">
+        <strong>{{ m.name }}:</strong>
+        <p>{{ m.message }}</p>
+    </div>
+    {% endfor %}
+
 </body>
 
 </html>
